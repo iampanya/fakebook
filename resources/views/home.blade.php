@@ -9,6 +9,8 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    go to your 
+                    <a href="{{url('/profile')}}">Profile page.</a>
                 </div>
             </div>
         </div>

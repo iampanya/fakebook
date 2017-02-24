@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -12,7 +13,8 @@ class ProfileController extends Controller
     //
     function index(){
       $profile = Profile::firstOrNew(['user_id' => Auth::user()->getId()]);
-      return view('profile.index')->with('profile', $profile);
+      $posts = Auth::user()->posts()->orderBy('id', 'desc')->get();
+      return view('profile.index')->with(['profile' => $profile, 'posts' => $posts]);
     }
 
     function edit() {
