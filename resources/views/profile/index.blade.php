@@ -20,6 +20,17 @@
     </div>
     <div class="col-md-6">
       <h2>My Post</h2>
+      <form class="form-horizontal" action="/post/create" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="body" name="body" placeholder="Post something...">
+          </div>
+          <div class="col-sm-2">
+            <button type="submit" class="btn btn-default btn-block">Post</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
