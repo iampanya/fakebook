@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/profile', 'ProfileController@index');
 Route::get('/profile/edit', 'ProfileController@edit');
+
+Route::post('/profile/edit', 'ProfileController@store');
