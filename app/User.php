@@ -30,7 +30,11 @@ class User extends Authenticatable
     public function profile(){
       return $this->hasone('App\Profile');
     }
-    
+
+    public function posts(){
+      return $this->hasmany('App\Post');
+    }
+
     public function getId()
     {
       return $this->id;
