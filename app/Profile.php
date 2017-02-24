@@ -13,4 +13,8 @@ class Profile extends Model
     public function user(){
       return $this->belongsTo('App\User', 'user_id');
     }
+
+    public function getFullName(){
+      return $this->titlename . '. ' . $this->firstname . '  ' . $this->lastname;
+    }
 }

@@ -11,12 +11,13 @@ class ProfileController extends Controller
 {
     //
     function index(){
-      return view('profile.index')->with('name', 'Panya');
+      $profile = Profile::firstOrNew(['user_id' => Auth::user()->getId()]);
+      return view('profile.index')->with('profile', $profile);
     }
 
     function edit() {
       $profile = Profile::firstOrNew(['user_id' => Auth::user()->getId()]);
-      
+
       return view('profile.edit')->with('profile', $profile);
     }
 
